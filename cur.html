@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+         <link rel="stylesheet" href="cur.css">
+    </head>
+    <body>
+        <div class="slider-container">
+       <input type="range" class="slider" min="1" max="100" value="100" id="">
+   </div>
+   <script type="text/javascript">
+   	
+   	function slider() {
+  const body = document.body;
+  const sliderContainer = document.querySelector('.slider-container');
+  const slider = document.querySelector('.slider');
+
+
+  function toggleSlider(){
+    body.style.background = `rgba(79, 97, 130, ${slider.value / 100})`;
+    sliderContainer.style.border = `20px solid rgba(141, 168, 226, ${slider.value / 100 + .2})`;
+    slider.style.background = `rgba(79, 97, 130, ${slider.value / 100 })`;
+    if (this.value > 45) {
+      slider.classList.remove('active');
+    } else {
+      slider.classList.add('active'); 
+    }
+  }
+
+  slider.oninput = toggleSlider;
+}
+
+window.onload = slider;
+   </script>
+
+    </body>
+    <
+</html>
